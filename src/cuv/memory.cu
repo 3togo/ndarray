@@ -11,10 +11,10 @@
 # to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 # copies of the Software, and to permit persons to whom the Software is
 # furnished to do so, subject to the following conditions:
-# 
+#
 # The above copyright notice and this permission notice shall be included in all
 # copies or substantial portions of the Software.
-# 
+#
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 # FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -95,7 +95,7 @@ void copy(value_type* dst, const value_type2* src, size_t size, dev_memory_space
         thrust::copy(thrust::device_ptr<value_type2>(const_cast<value_type2*>(src)),
                 thrust::device_ptr<value_type2>(const_cast<value_type2*>(src)) + size,
                 thrust::device_ptr<value_type>(dst));
-        cuvSafeCall(cudaThreadSynchronize());
+        cuvSafeCall(cudaDeviceSynchronize());
     }
 }
 
